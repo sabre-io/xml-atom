@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .'/vendor/autoload.php';
+require __DIR__ .'/../vendor/autoload.php';
 
 $input = file_get_contents('http://evertpot.com/atom.xml');
 

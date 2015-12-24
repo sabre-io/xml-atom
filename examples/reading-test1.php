@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ .'/vendor/autoload.php';
+require __DIR__ .'/../vendor/autoload.php';
 
 $input = <<<XML
 <?xml version="1.0" encoding="utf-8"?>

@@ -3,42 +3,55 @@
 namespace Sabre\Xml\Atom\Element;
 
 /**
- * The entry is an individual item in a feed, such as a single blog article.
+ * This object represents the atom:source element.
  *
- * @see https://tools.ietf.org/html/rfc4287#section-4.1.2
+ * When an entry from a feed is aggregrated from one feed to another, the
+ * aggregrated entry may contain a 'source' element containing all the
+ * meta-data the original feed had.
+ *
+ * This object contains all the properties Feed has, except the entries.
+ *
+ * @see https://tools.ietf.org/html/rfc4287#section-4.2.11
  * @copyright Copyright (C) fruux GmbH.
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Entry {
+class Source {
 
     /**
-     * Authors for the entry.
+     * Authors for the feed.
      *
      * @var Person[]
      */
     public $author = [];
 
     /**
-     * List of categories for the entry.
+     * List of categories for the feed
      *
      * @var Category[]
      */
     public $category = [];
 
     /**
-     * Content of the entry.
+     * Anyone who contributed to the feed.
+     *
+     * @var Person[] 
+     */
+    public $contributer = [];
+
+    /**
+     * The software that generated the feed.
      *
      * @var string
      */
-    public $content;
+    public $generator;
 
     /**
-     * Anyone who contributed to the entry.
+     * Url to an icon belonging to the feed.
      *
-     * @var Person[]
+     * @var string
      */
-    public $contributer = [];
+    public $icon;
 
     /**
      * A unique identifier for the feed.
@@ -57,11 +70,11 @@ class Entry {
     public $link = [];
 
     /**
-     * When the entry was first published.
+     * Uri to a logo for the feed.
      *
      * @var string
      */
-    public $published;
+    public $logo;
 
     /**
      * Copyright and such, as a string.
@@ -71,33 +84,24 @@ class Entry {
     public $rights;
 
     /**
-     * If the entry was copied from another feed, the feed information shoudl
-     * be contained in the source.
-     *
-     * @var Source
-     */
-    public $source;
-
-    /**
-     * Contains a summarized version of the entry.
+     * Secondary title for the feed.
      *
      * @var string
      */
-    public $summary;
+    public $subtitle;
 
     /**
-     * The title for the entry
+     * The main title for the feed.
      *
      * @var string
      */
     public $title;
 
     /**
-     * The last time the entry was updated.
+     * The last time the feed was updated.
      *
      * @var string
      */
     public $updated;
-
 
 }
