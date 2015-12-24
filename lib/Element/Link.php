@@ -55,4 +55,3 @@ class Link {
     public $length;
 
 }
-

@@ -45,8 +45,8 @@ class Service extends \Sabre\Xml\Service {
         $attributeReader = function($reader, $class) {
 
             $attributes = $reader->parseAttributes();
-            $object = new $class;
-            foreach($attributes as $key=>$value) {
+            $object = new $class();
+            foreach ($attributes as $key => $value) {
                 if (property_exists($object, $key)) {
                     $object->{$key} = $value;
                 }
