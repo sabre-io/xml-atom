@@ -6,7 +6,7 @@ namespace Sabre\Xml\Atom\Element;
  * The feed is the top-level element for all atom feeds.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-4.1.1 
- * @copyright Copyright (C) fruux GmbH.
+ * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */

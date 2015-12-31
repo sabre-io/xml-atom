@@ -9,7 +9,7 @@ namespace Sabre\Xml\Atom\Element;
  * This is used by the atom:author and atom:contributer elements.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-3.2
- * @copyright Copyright (C) fruux GmbH.
+ * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */

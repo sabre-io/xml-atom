@@ -7,7 +7,7 @@ namespace Sabre\Xml\Atom;
  *
  * See \Sabre\Xml\Service for all the utility methods.
  *
- * @copyright Copyright (C) fruux GmbH.
+ * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */

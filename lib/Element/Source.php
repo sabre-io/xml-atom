@@ -12,7 +12,7 @@ namespace Sabre\Xml\Atom\Element;
  * This object contains all the properties Feed has, except the entries.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-4.2.11
- * @copyright Copyright (C) fruux GmbH.
+ * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */

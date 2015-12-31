@@ -5,7 +5,7 @@ namespace Sabre\Xml\Atom;
 /**
  * This class contains the version number for this package.
  *
- * @copyright Copyright (C) fruux GmbH.
+ * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
