@@ -13,6 +13,43 @@ namespace Sabre\Xml\Atom\Element;
 class Entry {
 
     /**
+     * The title for the entry
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * Links associated with the feed
+     *
+     * @var Link
+     */
+    public $link = [];
+
+    /**
+     * A unique identifier for the feed.
+     *
+     * This should never change, and should be a URI.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
+     * The last time the entry was updated.
+     *
+     * @var string
+     */
+    public $updated;
+
+    /**
+     * Contains a summarized version of the entry.
+     *
+     * @var string
+     */
+    public $summary;
+
+    /**
      * Authors for the entry.
      *
      * @var Person[]
@@ -41,22 +78,6 @@ class Entry {
     public $contributer = [];
 
     /**
-     * A unique identifier for the feed.
-     *
-     * This should never change, and should be a URI.
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
-     * Links associated with the feed
-     *
-     * @var Link
-     */
-    public $link = [];
-
-    /**
      * When the entry was first published.
      *
      * @var string
@@ -78,26 +99,6 @@ class Entry {
      */
     public $source;
 
-    /**
-     * Contains a summarized version of the entry.
-     *
-     * @var string
-     */
-    public $summary;
-
-    /**
-     * The title for the entry
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * The last time the entry was updated.
-     *
-     * @var string
-     */
-    public $updated;
 
 
 }

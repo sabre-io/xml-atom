@@ -13,6 +13,27 @@ namespace Sabre\Xml\Atom\Element;
 class Feed {
 
     /**
+     * The main title for the feed.
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
+     * Links associated with the feed
+     *
+     * @var Link
+     */
+    public $link = [];
+
+    /**
+     * The last time the feed was updated.
+     *
+     * @var string
+     */
+    public $updated;
+
+    /**
      * Authors for the feed.
      *
      * @var Person[]
@@ -57,13 +78,6 @@ class Feed {
     public $id;
 
     /**
-     * Links associated with the feed
-     *
-     * @var Link
-     */
-    public $link = [];
-
-    /**
      * Uri to a logo for the feed.
      *
      * @var string
@@ -83,20 +97,6 @@ class Feed {
      * @var string
      */
     public $subtitle;
-
-    /**
-     * The main title for the feed.
-     *
-     * @var string
-     */
-    public $title;
-
-    /**
-     * The last time the feed was updated.
-     *
-     * @var string
-     */
-    public $updated;
 
     /**
      * The list of feed entries.
