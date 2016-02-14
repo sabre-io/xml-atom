@@ -92,13 +92,11 @@ class Entry {
     public $rights;
 
     /**
-     * If the entry was copied from another feed, the feed information shoudl
+     * If the entry was copied from another feed, the feed information should
      * be contained in the source.
      *
      * @var Source
      */
     public $source;
-
-
 
 }

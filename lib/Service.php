@@ -14,13 +14,16 @@ namespace Sabre\Xml\Atom;
 class Service extends \Sabre\Xml\Service {
 
     const ATOM_NS = 'http://www.w3.org/2005/Atom';
+    const ATOM_DEFAULT_PREFIX = 'atom';
 
     /**
      * Constructor
      */
     function __construct() {
 
-        $atom = '{http://www.w3.org/2005/Atom}';
+        $this->namespaceMap[self::ATOM_NS] = self::ATOM_DEFAULT_PREFIX;
+
+        $atom = '{' . self::ATOM_NS . '}';
 
         // The following elements are all simple xml elements, and we can use
         // the VO system for mapping from PHP object to XML element.
@@ -35,8 +38,17 @@ class Service extends \Sabre\Xml\Service {
         // This serializer takes an object and encodes all its properties as
         // XML attributes.
         $attributeWriter = function($writer, $object) {
+            $attributes = get_object_vars($object);
+
+            // remove properties with a null value from the list.
+            $attributes = array_filter(
+                $attributes,
+                function($item) {
+                    return $item!==null;
+                }
+            );
             $writer->writeAttributes(
-                get_object_vars($value)
+                $attributes
             );
         };
 
