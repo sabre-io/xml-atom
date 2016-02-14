@@ -44,7 +44,7 @@ class Service extends \Sabre\Xml\Service {
             $attributes = array_filter(
                 $attributes,
                 function($item) {
-                    return $item!==null;
+                    return $item !== null;
                 }
             );
             $writer->writeAttributes(

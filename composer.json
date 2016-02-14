@@ -11,7 +11,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php"       : ">=5.5",
-        "sabre/xml" : "dev-master"
+        "sabre/xml" : "^1.4.0"
     },
     "authors": [
         {
