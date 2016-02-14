@@ -20,6 +20,13 @@ class Link {
     public $href;
 
     /**
+     * Language of the target resource.
+     *
+     * @var string
+     */
+    public $hreflang;
+
+    /**
      * Relationship type (rel attribute).
      *
      * @var string
@@ -32,13 +39,6 @@ class Link {
      * @var string
      */
     public $type;
-
-    /**
-     * Language of the target resource.
-     *
-     * @var string
-     */
-    public $hrefLang;
 
     /**
      * Title of the link.

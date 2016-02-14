@@ -20,6 +20,13 @@ class Feed {
     public $title;
 
     /**
+     * Secondary title for the feed.
+     *
+     * @var string
+     */
+    public $subtitle;
+
+    /**
      * Links associated with the feed
      *
      * @var Link
@@ -32,6 +39,36 @@ class Feed {
      * @var string
      */
     public $updated;
+
+    /**
+     * The date the feed was last published.
+     *
+     * @var string
+     */
+    public $published;
+
+    /**
+     * A unique identifier for the feed.
+     *
+     * This should never change, and should be a URI.
+     *
+     * @var string
+     */
+    public $id;
+
+    /**
+     * Copyright and such, as a string.
+     *
+     * @var string
+     */
+    public $rights;
+
+    /**
+     * The software that generated the feed.
+     *
+     * @var string
+     */
+    public $generator;
 
     /**
      * Authors for the feed.
@@ -55,13 +92,6 @@ class Feed {
     public $contributer = [];
 
     /**
-     * The software that generated the feed.
-     *
-     * @var string
-     */
-    public $generator;
-
-    /**
      * Url to an icon belonging to the feed.
      *
      * @var string
@@ -69,34 +99,11 @@ class Feed {
     public $icon;
 
     /**
-     * A unique identifier for the feed.
-     *
-     * This should never change, and should be a URI.
-     *
-     * @var string
-     */
-    public $id;
-
-    /**
      * Uri to a logo for the feed.
      *
      * @var string
      */
     public $logo;
-
-    /**
-     * Copyright and such, as a string.
-     *
-     * @var string
-     */
-    public $rights;
-
-    /**
-     * Secondary title for the feed.
-     *
-     * @var string
-     */
-    public $subtitle;
 
     /**
      * The list of feed entries.

@@ -43,6 +43,13 @@ class Entry {
     public $updated;
 
     /**
+     * When the entry was first published.
+     *
+     * @var string
+     */
+    public $published;
+
+    /**
      * Contains a summarized version of the entry.
      *
      * @var string
@@ -64,25 +71,18 @@ class Entry {
     public $category = [];
 
     /**
+     * Anyone who contributed to the entry.
+     *
+     * @var Person[]
+     */
+    public $contributor = [];
+
+    /**
      * Content of the entry.
      *
      * @var string
      */
     public $content;
-
-    /**
-     * Anyone who contributed to the entry.
-     *
-     * @var Person[]
-     */
-    public $contributer = [];
-
-    /**
-     * When the entry was first published.
-     *
-     * @var string
-     */
-    public $published;
 
     /**
      * Copyright and such, as a string.
