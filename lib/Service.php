@@ -21,19 +21,31 @@ class Service extends \Sabre\Xml\Service {
      */
     function __construct() {
 
-        $this->namespaceMap[self::ATOM_NS] = self::ATOM_DEFAULT_PREFIX;
+        self::setupService($this);
 
+    }
+
+    /**
+     * This method takes an existing Sabre/Xml/Service object and registers
+     * all the class mappings for the atom format.
+     *
+     * @param Sabre\Xml\Service $service
+     * @return void
+     */
+    static function setupService(\Sabre\Xml\Service $service) {
+
+        $service->namespaceMap[self::ATOM_NS] = self::ATOM_DEFAULT_PREFIX;
         $atom = '{' . self::ATOM_NS . '}';
 
         // The following elements are all simple xml elements, and we can use
         // the VO system for mapping from PHP object to XML element.
-        $this->mapValueObject($atom . 'feed', Element\Feed::class);
-        $this->mapValueObject($atom . 'entry', Element\Entry::class);
-        $this->mapValueObject($atom . 'source', Element\Source::class);
-        $this->mapValueObject($atom . 'author', Element\Person::class);
-        $this->mapValueObject($atom . 'contributer', Element\Person::class);
+        $service->mapValueObject($atom . 'feed', Element\Feed::class);
+        $service->mapValueObject($atom . 'entry', Element\Entry::class);
+        $service->mapValueObject($atom . 'source', Element\Source::class);
+        $service->mapValueObject($atom . 'author', Element\Person::class);
+        $service->mapValueObject($atom . 'contributer', Element\Person::class);
 
-        // The following elements need custom (de-)serializers 
+        // The following elements need custom (de-)serializers
 
         // This serializer takes an object and encodes all its properties as
         // XML attributes.
@@ -53,7 +65,7 @@ class Service extends \Sabre\Xml\Service {
         };
 
         // This deserializer takes all attributes from an xml element and
-        // turns the into properties of a class. 
+        // turns the into properties of a class.
         $attributeReader = function($reader, $class) {
 
             $attributes = $reader->parseAttributes();
@@ -71,16 +83,14 @@ class Service extends \Sabre\Xml\Service {
 
         };
 
-
-
         // atom:category
-        $this->classMap[Element\Category::class] = $attributeWriter;
-        $this->elementMap[$atom . 'category'] = function($reader) use ($attributeReader) {
+        $service->classMap[Element\Category::class] = $attributeWriter;
+        $service->elementMap[$atom . 'category'] = function($reader) use ($attributeReader) {
             return $attributeReader($reader, Element\Category::class);
         };
         // atom:link
-        $this->classMap[Element\Link::class] = $attributeWriter;
-        $this->elementMap[$atom . 'link'] = function($reader) use ($attributeReader) {
+        $service->classMap[Element\Link::class] = $attributeWriter;
+        $service->elementMap[$atom . 'link'] = function($reader) use ($attributeReader) {
             return $attributeReader($reader, Element\Link::class);
         };
 

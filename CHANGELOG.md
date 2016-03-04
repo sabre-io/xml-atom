@@ -1,6 +1,13 @@
 ChangeLog
 =========
 
+0.1.1 (????-??-??)
+------------------
+
+* Now allowing users to register atom (de-)serializers on their existing
+  `Sabre\Xml\Service` objects.
+
+
 0.1.0 (2016-02-14)
 ------------------
 
