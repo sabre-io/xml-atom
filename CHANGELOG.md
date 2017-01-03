@@ -1,6 +1,14 @@
 ChangeLog
 =========
 
+0.2.0 (2017-01-03)
+------------------
+
+* Now a PHP 7 package!
+* Uses sabre/xml 2.0.
+* Strict types everywhere.
+
+
 0.1.0 (2016-02-14)
 ------------------
 

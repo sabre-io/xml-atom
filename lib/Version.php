@@ -1,4 +1,4 @@
-<?php
+<?php declare (strict_types=1);
 
 namespace Sabre\Xml\Atom;
 
@@ -14,6 +14,6 @@ class Version {
     /**
      * Full version number
      */
-    const VERSION = '0.1.0';
+    const VERSION = '0.2.0';
 
 }
