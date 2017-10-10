@@ -18,7 +18,7 @@ Build status
 
 | branch | status |
 | ------ | ------ |
-| master | [![Build Status](https://travis-ci.org/fruux/sabre-xml-atom.png?branch=master)](https://travis-ci.org/fruux/sabre-xml-atom) |
+| master | [![Build Status](https://travis-ci.org/sabre-io/xml-atom.png?branch=master)](https://travis-ci.org/sabre-io/xml-atom) |
 
 
 Questions?
