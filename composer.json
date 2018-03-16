@@ -30,6 +30,11 @@
             "Sabre\\Xml\\Atom\\" : "lib/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Sabre\\Xml\\Atom\\" : "tests/"
+        }
+    },
     "require-dev": {
         "sabre/cs": "^1.0",
         "phpunit/phpunit" : "*"
