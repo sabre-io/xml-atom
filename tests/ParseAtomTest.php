@@ -2,7 +2,7 @@
 
 namespace Sabre\Xml\Atom;
 
-class ParseAtomTest extends \PHPUnit_Framework_TestCase {
+class ParseAtomTest extends \PHPUnit\Framework\TestCase {
 
     function testSimple() {
 
@@ -17,6 +17,7 @@ class ParseAtomTest extends \PHPUnit_Framework_TestCase {
  <author>
    <name>John Doe</name>
  </author>
+ <category term="category"/>
 
 
  <entry>
@@ -36,6 +37,10 @@ XML;
         $link = new Element\Link();
         $link->href = 'http://example.org/';
         $feed->link[] = $link;
+
+        $category = new Element\Category();
+        $category->term = 'category';
+        $feed->category[] = $category;
 
         $feed->updated = '2003-12-13T18:30:02Z';
 
