@@ -10,7 +10,7 @@
     "homepage": "http://sabre.io/dav/",
     "license": "BSD-3-Clause",
     "require": {
-        "php"       : ">=7.0",
+        "php"       : "^7.1",
         "sabre/xml" : "^2.0"
     },
     "authors": [
@@ -31,8 +31,8 @@
         }
     },
     "require-dev": {
-        "sabre/cs": "^1.0",
-        "phpunit/phpunit" : "*"
+        "friendsofphp/php-cs-fixer": "^2",
+        "phpunit/phpunit" : "^7"
     },
     "config" : {
         "bin-dir" : "bin/"
