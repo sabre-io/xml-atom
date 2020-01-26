@@ -1,4 +1,6 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom\Element;
 
@@ -12,12 +14,13 @@ namespace Sabre\Xml\Atom\Element;
  * This object contains all the properties Feed has, except the entries.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-4.2.11
+ *
  * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Source {
-
+class Source
+{
     /**
      * Authors for the feed.
      *
@@ -26,7 +29,7 @@ class Source {
     public $author = [];
 
     /**
-     * List of categories for the feed
+     * List of categories for the feed.
      *
      * @var Category[]
      */
@@ -35,7 +38,7 @@ class Source {
     /**
      * Anyone who contributed to the feed.
      *
-     * @var Person[] 
+     * @var Person[]
      */
     public $contributer = [];
 
@@ -63,7 +66,7 @@ class Source {
     public $id;
 
     /**
-     * Links associated with the feed
+     * Links associated with the feed.
      *
      * @var Link
      */
@@ -103,5 +106,4 @@ class Source {
      * @var string
      */
     public $updated;
-
 }

@@ -1,17 +1,20 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom\Element;
 
 /**
  * The feed is the top-level element for all atom feeds.
  *
- * @see https://tools.ietf.org/html/rfc4287#section-4.1.1 
+ * @see https://tools.ietf.org/html/rfc4287#section-4.1.1
+ *
  * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Feed {
-
+class Feed
+{
     /**
      * The main title for the feed.
      *
@@ -27,7 +30,7 @@ class Feed {
     public $subtitle;
 
     /**
-     * Links associated with the feed
+     * Links associated with the feed.
      *
      * @var Link
      */
@@ -78,7 +81,7 @@ class Feed {
     public $author = [];
 
     /**
-     * List of categories for the feed
+     * List of categories for the feed.
      *
      * @var Category[]
      */
@@ -87,7 +90,7 @@ class Feed {
     /**
      * Anyone who contributed to the feed.
      *
-     * @var Person[] 
+     * @var Person[]
      */
     public $contributer = [];
 
@@ -111,5 +114,4 @@ class Feed {
      * @var Entry[]
      */
     public $entry = [];
-
 }

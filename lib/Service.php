@@ -1,4 +1,6 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom;
 
@@ -11,40 +13,40 @@ namespace Sabre\Xml\Atom;
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Service extends \Sabre\Xml\Service {
-
+class Service extends \Sabre\Xml\Service
+{
     const ATOM_NS = 'http://www.w3.org/2005/Atom';
     const ATOM_DEFAULT_PREFIX = 'atom';
 
     /**
-     * Constructor
+     * Constructor.
      */
-    function __construct() {
-
+    public function __construct()
+    {
         $this->namespaceMap[self::ATOM_NS] = self::ATOM_DEFAULT_PREFIX;
 
-        $atom = '{' . self::ATOM_NS . '}';
+        $atom = '{'.self::ATOM_NS.'}';
 
         // The following elements are all simple xml elements, and we can use
         // the VO system for mapping from PHP object to XML element.
-        $this->mapValueObject($atom . 'feed', Element\Feed::class);
-        $this->mapValueObject($atom . 'entry', Element\Entry::class);
-        $this->mapValueObject($atom . 'source', Element\Source::class);
-        $this->mapValueObject($atom . 'author', Element\Person::class);
-        $this->mapValueObject($atom . 'contributer', Element\Person::class);
+        $this->mapValueObject($atom.'feed', Element\Feed::class);
+        $this->mapValueObject($atom.'entry', Element\Entry::class);
+        $this->mapValueObject($atom.'source', Element\Source::class);
+        $this->mapValueObject($atom.'author', Element\Person::class);
+        $this->mapValueObject($atom.'contributer', Element\Person::class);
 
-        // The following elements need custom (de-)serializers 
+        // The following elements need custom (de-)serializers
 
         // This serializer takes an object and encodes all its properties as
         // XML attributes.
-        $attributeWriter = function($writer, $object) {
+        $attributeWriter = function ($writer, $object) {
             $attributes = get_object_vars($object);
 
             // remove properties with a null value from the list.
             $attributes = array_filter(
                 $attributes,
-                function($item) {
-                    return $item !== null;
+                function ($item) {
+                    return null !== $item;
                 }
             );
             $writer->writeAttributes(
@@ -53,9 +55,8 @@ class Service extends \Sabre\Xml\Service {
         };
 
         // This deserializer takes all attributes from an xml element and
-        // turns the into properties of a class. 
-        $attributeReader = function($reader, $class) {
-
+        // turns the into properties of a class.
+        $attributeReader = function ($reader, $class) {
             $attributes = $reader->parseAttributes();
             $object = new $class();
             foreach ($attributes as $key => $value) {
@@ -68,22 +69,17 @@ class Service extends \Sabre\Xml\Service {
             $reader->next();
 
             return $object;
-
         };
-
-
 
         // atom:category
         $this->classMap[Element\Category::class] = $attributeWriter;
-        $this->elementMap[$atom . 'category'] = function($reader) use ($attributeReader) {
+        $this->elementMap[$atom.'category'] = function ($reader) use ($attributeReader) {
             return $attributeReader($reader, Element\Category::class);
         };
         // atom:link
         $this->classMap[Element\Link::class] = $attributeWriter;
-        $this->elementMap[$atom . 'link'] = function($reader) use ($attributeReader) {
+        $this->elementMap[$atom.'link'] = function ($reader) use ($attributeReader) {
             return $attributeReader($reader, Element\Link::class);
         };
-
     }
-
 }

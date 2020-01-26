@@ -1,4 +1,6 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom\Element;
 
@@ -6,21 +8,22 @@ namespace Sabre\Xml\Atom\Element;
  * The entry is an individual item in a feed, such as a single blog article.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-4.1.2
+ *
  * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Entry {
-
+class Entry
+{
     /**
-     * The title for the entry
+     * The title for the entry.
      *
      * @var string
      */
     public $title;
 
     /**
-     * Links associated with the feed
+     * Links associated with the feed.
      *
      * @var Link
      */
@@ -98,5 +101,4 @@ class Entry {
      * @var Source
      */
     public $source;
-
 }
