@@ -1,4 +1,6 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom\Element;
 
@@ -9,12 +11,13 @@ namespace Sabre\Xml\Atom\Element;
  * This is used by the atom:author and atom:contributer elements.
  *
  * @see https://tools.ietf.org/html/rfc4287#section-3.2
+ *
  * @copyright Copyright (C) fruux GmbH (https://fruux.com/)
  * @author Evert Pot (http://evertpot.com/)
  * @license http://sabre.io/license/
  */
-class Person {
-
+class Person
+{
     /**
      * Person's full name.
      *
@@ -35,5 +38,4 @@ class Person {
      * @var string
      */
     public $email;
-
 }
