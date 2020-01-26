@@ -2,7 +2,9 @@
 
 namespace Sabre\Xml\Atom;
 
-class ParseAtomTest extends \PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+class ParseAtomTest extends TestCase {
 
     function testSimple() {
 
