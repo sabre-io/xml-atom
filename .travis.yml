@@ -16,4 +16,4 @@ before_script: composer install
 script:
   - ./bin/php-cs-fixer fix lib/ --dry-run --diff
   - ./bin/phpstan.phar analyse -c phpstan.neon lib
-  - ./bin/phpunit --configuration tests/phpunit.xml.dist
+  - ./bin/phpunit --configuration tests/phpunit.xml
