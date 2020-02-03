@@ -1,13 +1,15 @@
-<?php declare (strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Sabre\Xml\Atom;
 
 use PHPUnit\Framework\TestCase;
 
-class ParseAtomTest extends TestCase {
-
-    function testSimple() {
-
+class ParseAtomTest extends TestCase
+{
+    public function testSimple()
+    {
         $xml = <<<XML
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -46,7 +48,7 @@ XML;
         $feed->author[] = $author;
 
         $feed->id = 'urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6';
-     
+
         $entry = new Element\Entry();
         $entry->title = 'Atom-Powered Robots Run Amok';
 
@@ -61,11 +63,10 @@ XML;
         $feed->entry[] = $entry;
 
         $this->assertRoundTrip($xml, $feed);
-
     }
 
-    function testExtensive() {
-
+    public function testExtensive()
+    {
         $xml = <<<XML
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -110,7 +111,6 @@ XML;
 XML;
 
         $this->assertRoundTrip($xml);
-
     }
 
     /**
@@ -120,8 +120,8 @@ XML;
      * If compareObject is specified, we'll also do a deep comparison of the
      * parsed atom php object.
      */
-    function assertRoundTrip($xml, $compareObject = null) {
-
+    public function assertRoundTrip($xml, $compareObject = null)
+    {
         $service = new Service();
 
         // Changing the default namespace prefix to an empty one, as the tests
@@ -136,8 +136,5 @@ XML;
 
         $newXml = $service->writeValueObject($object);
         $this->assertXmlStringEqualsXmlString($newXml, $xml);
-
     }
-
-
 }
