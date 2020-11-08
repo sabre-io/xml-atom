@@ -1,6 +1,8 @@
 sabre/xml-atom
 ===============
 
+Trigger CI
+
 This package contains a reader and writer for the [Atom XML format][5].
 It also serves as a sample implementation of the [sabre/xml][6] package.
 
