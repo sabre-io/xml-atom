@@ -7,8 +7,8 @@ namespace Sabre\Xml\Atom\Element;
 /**
  * This object represents the atom:source element.
  *
- * When an entry from a feed is aggregrated from one feed to another, the
- * aggregrated entry may contain a 'source' element containing all the
+ * When an entry from a feed is aggregated from one feed to another, the
+ * aggregated entry may contain a 'source' element containing all the
  * meta-data the original feed had.
  *
  * This object contains all the properties Feed has, except the entries.
